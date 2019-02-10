@@ -20,4 +20,5 @@ flappy代码引用：https://github.com/sourabhv/FlapPyBird
 
 2.5 运行flappy
 
+
 关于这个的介绍可以去我的博客https://blog.csdn.net/qq_28888837/article/details/86889841看
