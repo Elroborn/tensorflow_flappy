@@ -8,17 +8,18 @@ import os
 import cv2 as cv
 import numpy as np
 import pickle
-dirname = "./shitou/"
-a = []
-for f in os.listdir(dirname):
-    img = cv.imread(dirname+f)
-    img = cv.resize(img,(64,64))
-    img = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
-    img = np.reshape(img,(64,64,1))
-    a.append(img)
-a = np.array(a)
-with open("shitou.pkl","wb") as f:
-    pickle.dump(a,f)
+def process():
+    dirname = "./bu/"
+    a = []
+    for f in os.listdir(dirname):
+        img = cv.imread(dirname+f)
+        img = cv.resize(img,(64,64))
+        img = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+        img = np.reshape(img,(64,64,1))
+        a.append(img)
+    a = np.array(a)
+    with open("bu.pkl","wb") as f:
+        pickle.dump(a,f)
 
 def get_data():
     shitou = None
