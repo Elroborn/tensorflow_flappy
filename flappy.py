@@ -16,7 +16,7 @@ graph = tf.get_default_graph()
 x_image = graph.get_tensor_by_name("Placeholder:0")
 y_ = graph.get_tensor_by_name("add_3:0")
 keep_drop = graph.get_tensor_by_name("Placeholder_2:0")
-FPS = 30
+FPS = 45
 SCREENWIDTH  = 288
 SCREENHEIGHT = 512
 # amount by which base can maximum shift to left
@@ -247,7 +247,7 @@ def mainGame(movementInfo):
                 pygame.quit()
                 sys.exit()
             if event.type == KEYDOWN and (event.key == K_SPACE or event.key == K_UP):
-                win32api.keybd_event(38,0,win32con.KEYEVENTF_KEYUP,0) #释放按键
+                # win32api.keybd_event(38,0,win32con.KEYEVENTF_KEYUP,0) #释放按键
                 if playery > -2 * IMAGES['player'][0].get_height():
                     playerVelY = playerFlapAcc
                     playerFlapped = True
@@ -332,7 +332,7 @@ def mainGame(movementInfo):
 
         pygame.display.update()
         FPSCLOCK.tick(FPS)
-        cv2.waitKey(24)
+        cv2.waitKey(FPS)
 
 def showGameOverScreen(crashInfo):
     """crashes the player down ans shows gameover image"""
